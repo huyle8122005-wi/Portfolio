@@ -7,11 +7,15 @@
   --foreground: #D7E2EA;
 }
 
-html, body, #root {
-  background: #0C0C0C;
+html {
+  background: #06020c;
+  box-sizing: border-box;
+}
+
+body, #root {
+  background: transparent;
   color: #D7E2EA;
   font-family: 'Kanit', sans-serif;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -28,7 +32,7 @@ html, body, #root {
 
 .main-wrapper {
   overflow-x: clip;
-  background: #0C0C0C;
+  background: transparent;
 }
 
 /* Custom styles for character animations and magnetic effects if needed */

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 interface AnimatedTextProps {
@@ -10,33 +10,48 @@ interface AnimatedTextProps {
 
 export default function AnimatedText({ text, className = "" }: AnimatedTextProps) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start 0.8', 'end 0.2']
-  });
+  const isInView = useInView(ref, { once: true, margin: "-15%" });
 
-  const characters = text.split("");
+  const words = text.split(" ");
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.02,
+      },
+    },
+  };
+
+  const wordVariants = {
+    hidden: { opacity: 0.15, y: 8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.215, 0.610, 0.355, 1.000],
+      },
+    },
+  };
 
   return (
-    <p ref={ref} className={className}>
-      {characters.map((char, i) => {
-        const start = i / characters.length;
-        const end = (i + 1) / characters.length;
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1]);
-        
-        return (
-          <span key={i} className="relative inline-block">
-            <span className="opacity-0">{char}</span>
-            <motion.span 
-              style={{ opacity }}
-              className="absolute inset-0"
-            >
-              {char}
-            </motion.span>
-          </span>
-        );
-      })}
-    </p>
+    <motion.p
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className={`${className} flex flex-wrap justify-center`}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          variants={wordVariants}
+          className="inline-block mr-[0.25em] mb-[0.1em] whitespace-nowrap"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.p>
   );
 }

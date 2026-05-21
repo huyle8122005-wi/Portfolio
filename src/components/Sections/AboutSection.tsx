@@ -6,7 +6,7 @@ import { ContactButton } from '../Reusable/Buttons';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative flex min-h-screen flex-col items-center justify-center bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 overflow-hidden">
+    <section id="about" className="relative flex min-h-screen flex-col items-center justify-center bg-transparent px-5 py-20 sm:px-8 md:px-10 overflow-hidden">
       {/* Decorative Icons */}
       <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute left-[1%] top-[4%] sm:left-[2%] md:left-[4%] z-0">
         <img 
