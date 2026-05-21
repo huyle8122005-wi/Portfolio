@@ -1,0 +1,73 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: oklch(var(--primary) / 0.1);
+  border: 1px solid oklch(var(--primary) / 0.2);
+  color: oklch(var(--primary));
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: oklch(var(--text));
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: oklch(var(--text-muted));
+  max-width: 60ch;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primaryBtn {
+  padding: 0.75rem 2rem;
+  background: oklch(var(--primary));
+  color: oklch(var(--background));
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.secondaryBtn {
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: oklch(var(--text));
+  border: 1px solid oklch(var(--text) / 0.2);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background: oklch(var(--text) / 0.05);
+  border-color: oklch(var(--text) / 0.4);
+}

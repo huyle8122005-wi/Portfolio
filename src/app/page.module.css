@@ -1,0 +1,91 @@
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactCard {
+  padding: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contactCard {
+    padding: 2rem;
+  }
+}
+
+.contactTitle {
+  font-size: 3rem;
+}
+
+.contactText {
+  font-size: 1.25rem;
+  color: oklch(var(--text-muted));
+  max-width: 50ch;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.mailLink {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: oklch(var(--primary));
+  position: relative;
+}
+
+.mailLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: oklch(var(--primary));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.mailLink:hover::after {
+  transform: scaleX(1);
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+  color: oklch(var(--text-muted));
+  font-size: 0.9rem;
+}
+
+.socials a:hover {
+  color: oklch(var(--text));
+}
+
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  color: oklch(var(--text-muted));
+  font-size: 0.875rem;
+}

@@ -1,0 +1,82 @@
+:root {
+  /* Design Tokens from DESIGN.md */
+  --background: 18% 0.02 240;
+  --surface: 25% 0.03 240;
+  --primary: 75% 0.15 200;
+  --text: 95% 0.01 240;
+  --text-muted: 75% 0.01 240;
+  
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: oklch(var(--surface) / 0.7);
+  
+  --font-heading: 'Geist Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Geist Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: oklch(var(--background));
+  color: oklch(var(--text));
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+/* Gradient Background Noise */
+.bg-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3 Blackboard%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
