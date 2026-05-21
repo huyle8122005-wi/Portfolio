@@ -11,8 +11,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lê Kim Huy | Portfolio",
-  description: "Interactive Portfolio of Lê Kim Huy - AI Chatbot & Web Developer",
+  title: "Lê Kim Huy | Interactive Portfolio",
+  description: "AI Chatbot & Web Developer Portfolio - Showcasing smart AI systems and modern web experiences.",
 };
 
 export default function RootLayout({
