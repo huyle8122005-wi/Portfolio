@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-const geistSans = Geist({
-  variable: "--font-heading",
-  subsets: ["latin"],
-});
+import { Kanit } from "next/font/google";
+import "./globals.css";
 
-const geistMono = Geist_Mono({
-  variable: "--font-body",
+const kanit = Kanit({
+  variable: "--font-kanit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Lê Kim Huy | Interactive Portfolio",
-  description: "AI Chatbot & Web Developer Portfolio - Showcasing smart AI systems and modern web experiences.",
+  title: "Jack -- 3D Creator",
+  description: "Portfolio of Jack, a 3D Creator driven by crafting striking and unforgettable projects.",
 };
 
 export default function RootLayout({
@@ -21,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="bg-noise" />
-        {children}
+    <html lang="en" className={`${kanit.variable}`}>
+      <body className="antialiased">
+        <div className="main-wrapper">
+          {children}
+        </div>
       </body>
     </html>
   );
 }
-

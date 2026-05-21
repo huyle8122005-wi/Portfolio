@@ -1,0 +1,61 @@
+'use client';
+
+import FadeIn from '../Reusable/FadeIn';
+import Magnet from '../Reusable/Magnet';
+import { ContactButton } from '../Reusable/Buttons';
+
+export default function HeroSection() {
+  return (
+    <section className="relative flex h-screen flex-col overflow-x-clip bg-[#0C0C0C]">
+      {/* Navbar */}
+      <FadeIn delay={0} y={-20} className="z-20 px-6 pt-6 md:px-10 md:pt-8">
+        <nav className="flex items-center justify-between text-sm font-medium uppercase tracking-wider text-[#D7E2EA] md:text-lg lg:text-[1.4rem]">
+          <a href="#about" className="transition-opacity hover:opacity-70 duration-200">About</a>
+          <a href="#services" className="transition-opacity hover:opacity-70 duration-200">Price</a>
+          <a href="#projects" className="transition-opacity hover:opacity-70 duration-200">Projects</a>
+          <a href="#contact" className="transition-opacity hover:opacity-70 duration-200">Contact</a>
+        </nav>
+      </FadeIn>
+
+      {/* Hero Heading */}
+      <div className="relative z-0 mt-6 flex flex-1 items-center justify-center sm:mt-4 md:-mt-5">
+        <div className="w-full overflow-hidden text-center">
+          <FadeIn delay={0.15} y={40}>
+            <h1 className="hero-heading w-full whitespace-nowrap text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
+              Hi, i&apos;m jack
+            </h1>
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="z-20 flex items-end justify-between px-6 pb-7 sm:px-10 sm:pb-8 md:pb-10">
+        <FadeIn delay={0.35} y={20}>
+          <p className="max-w-[160px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]">
+            a 3d creator driven by crafting striking and unforgettable projects
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.5} y={20}>
+          <ContactButton />
+        </FadeIn>
+      </div>
+
+      {/* Hero Portrait */}
+      <Magnet 
+        padding={150} 
+        strength={3} 
+        className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:translate-y-0"
+      >
+        <FadeIn delay={0.6} y={30}>
+          <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+            <img 
+              src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png" 
+              alt="Jack Portrait" 
+              className="w-full object-contain"
+            />
+          </div>
+        </FadeIn>
+      </Magnet>
+    </section>
+  );
+}
