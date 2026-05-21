@@ -50,8 +50,8 @@ export default function AboutSection() {
 
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
           <AnimatedText 
-            text="With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
-            className="max-w-[560px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]"
+            text="I am a third-year student majoring in Development Economics, specializing in Economic Data Analysis and Policy at the University of Economics and Business - VNU. With a strong logical mindset and expertise in AI development, I bridge the gap between financial theory and professional corporate environments. Let's build something incredible together!"
+            className="max-w-[600px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]"
           />
           <ContactButton />
         </div>

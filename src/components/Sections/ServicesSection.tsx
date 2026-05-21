@@ -5,28 +5,28 @@ import FadeIn from '../Reusable/FadeIn';
 const SERVICES = [
   {
     num: "01",
-    name: "3D Modeling",
-    description: "Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations."
+    name: "AI Chatbot Development",
+    description: "Building intelligent conversational agents using LLMs like Gemini and GPT, integrated with RAG systems for deep knowledge retrieval."
   },
   {
     num: "02",
-    name: "Rendering",
-    description: "High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life."
+    name: "Web Development",
+    description: "Creating high-performance web applications with Next.js, TypeScript, and modern styling tools like Tailwind CSS and Framer Motion."
   },
   {
     num: "03",
-    name: "Motion Design",
-    description: "Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences."
+    name: "Economic Data Analysis",
+    description: "Leveraging data analysis techniques to derive policy insights and financial strategies, specialized in economic data structures."
   },
   {
     num: "04",
-    name: "Branding",
-    description: "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence."
+    name: "AI Frameworks & RAG",
+    description: "Implementing sophisticated AI frameworks like PydanticAI to create structured, reliable, and expert-level AI reasoning systems."
   },
   {
     num: "05",
-    name: "Web Design",
-    description: "Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience."
+    name: "Digital Transformation",
+    description: "Helping businesses modernize through AI integration and high-converting digital interfaces that stand out in the market."
   }
 ];
 

@@ -22,7 +22,7 @@ export default function HeroSection() {
         <div className="w-full overflow-hidden text-center">
           <FadeIn delay={0.15} y={40}>
             <h1 className="hero-heading w-full whitespace-nowrap text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
-              Hi, i&apos;m jack
+              Hi, i&apos;m huy
             </h1>
           </FadeIn>
         </div>
@@ -32,7 +32,7 @@ export default function HeroSection() {
       <div className="z-20 flex items-end justify-between px-6 pb-7 sm:px-10 sm:pb-8 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p className="max-w-[160px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]">
-            a 3d creator driven by crafting striking and unforgettable projects
+            An AI Chatbot & Web Developer driven by crafting smart and impactful projects
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
@@ -47,10 +47,10 @@ export default function HeroSection() {
         className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:translate-y-0"
       >
         <FadeIn delay={0.6} y={30}>
-          <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+          <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] rounded-full overflow-hidden border-4 border-[#D7E2EA]/20">
             <img 
-              src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png" 
-              alt="Jack Portrait" 
+              src="/cv123.jpg" 
+              alt="Huy Portrait" 
               className="w-full object-contain"
             />
           </div>
