@@ -10,10 +10,10 @@ export default function HeroSection() {
       {/* Navbar */}
       <FadeIn delay={0} y={-20} className="z-20 px-6 pt-6 md:px-10 md:pt-8">
         <nav className="flex items-center justify-between text-sm font-medium uppercase tracking-wider text-[#D7E2EA] md:text-lg lg:text-[1.4rem]">
-          <a href="#about" className="transition-opacity hover:opacity-70 duration-200">About</a>
-          <a href="#services" className="transition-opacity hover:opacity-70 duration-200">Price</a>
-          <a href="#projects" className="transition-opacity hover:opacity-70 duration-200">Projects</a>
-          <a href="#contact" className="transition-opacity hover:opacity-70 duration-200">Contact</a>
+          <a href="#about" className="transition-opacity hover:opacity-70 duration-200">Giới thiệu</a>
+          <a href="#services" className="transition-opacity hover:opacity-70 duration-200">Dịch vụ</a>
+          <a href="#projects" className="transition-opacity hover:opacity-70 duration-200">Dự án</a>
+          <a href="#contact" className="transition-opacity hover:opacity-70 duration-200">Liên hệ</a>
         </nav>
       </FadeIn>
 
@@ -22,7 +22,7 @@ export default function HeroSection() {
         <div className="w-full overflow-hidden text-center">
           <FadeIn delay={0.15} y={40}>
             <h1 className="hero-heading w-full whitespace-nowrap text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
-              Hi, i&apos;m huy
+              Chào, mình là Huy
             </h1>
           </FadeIn>
         </div>
@@ -32,11 +32,11 @@ export default function HeroSection() {
       <div className="z-20 flex items-end justify-between px-6 pb-7 sm:px-10 sm:pb-8 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p className="max-w-[160px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]">
-            An AI Chatbot & Web Developer driven by crafting smart and impactful projects
+            AI Chatbot & Web Developer với tư duy kinh tế và công nghệ đột phá
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
-          <ContactButton />
+          <ContactButton label="Liên hệ ngay" />
         </FadeIn>
       </div>
 

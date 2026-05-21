@@ -5,28 +5,28 @@ import FadeIn from '../Reusable/FadeIn';
 const SERVICES = [
   {
     num: "01",
-    name: "AI Chatbot Development",
-    description: "Building intelligent conversational agents using LLMs like Gemini and GPT, integrated with RAG systems for deep knowledge retrieval."
+    name: "Phát triển AI Chatbot",
+    description: "Xây dựng các trợ lý ảo thông minh sử dụng LLMs (Gemini, GPT) kết hợp hệ thống RAG để truy xuất kiến thức chuyên sâu."
   },
   {
     num: "02",
-    name: "Web Development",
-    description: "Creating high-performance web applications with Next.js, TypeScript, and modern styling tools like Tailwind CSS and Framer Motion."
+    name: "Lập trình Web Hiện đại",
+    description: "Tạo ra các ứng dụng web hiệu năng cao với Next.js, TypeScript, tối ưu hóa trải nghiệm người dùng và tốc độ tải trang."
   },
   {
     num: "03",
-    name: "Economic Data Analysis",
-    description: "Leveraging data analysis techniques to derive policy insights and financial strategies, specialized in economic data structures."
+    name: "Phân tích Dữ liệu Kinh tế",
+    description: "Sử dụng các kỹ thuật phân tích dữ liệu để đưa ra các dự báo và giải pháp chiến lược trong lĩnh vực kinh tế và tài chính."
   },
   {
     num: "04",
     name: "AI Frameworks & RAG",
-    description: "Implementing sophisticated AI frameworks like PydanticAI to create structured, reliable, and expert-level AI reasoning systems."
+    description: "Triển khai các framework AI tiên tiến như PydanticAI để tạo ra các hệ thống suy luận logic, tin cậy và chính xác."
   },
   {
     num: "05",
-    name: "Digital Transformation",
-    description: "Helping businesses modernize through AI integration and high-converting digital interfaces that stand out in the market."
+    name: "Chuyển đổi số Doanh nghiệp",
+    description: "Tư vấn và thực hiện giải pháp công nghệ giúp doanh nghiệp tối ưu quy trình vận hành và nổi bật trên thị trường số."
   }
 ];
 
@@ -36,7 +36,7 @@ export default function ServicesSection() {
       <div className="container mx-auto">
         <FadeIn>
           <h2 className="mb-16 text-center text-[clamp(3rem,12vw,160px)] font-black uppercase text-[#0C0C0C] sm:mb-20 md:mb-28">
-            Services
+            Dịch vụ
           </h2>
         </FadeIn>
 

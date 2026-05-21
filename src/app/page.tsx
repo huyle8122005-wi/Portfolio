@@ -16,7 +16,7 @@ export default function Home() {
       {/* Simple Footer to complete the dark theme wrap */}
       <footer className="bg-[#0C0C0C] py-20 text-center text-[#D7E2EA] opacity-40">
         <div className="container mx-auto px-10">
-          <p className="uppercase tracking-widest text-sm">Jack &copy; {new Date().getFullYear()} -- 3D Creator</p>
+          <p className="uppercase tracking-widest text-sm">Huy Lê &copy; {new Date().getFullYear()} -- AI & Web Developer</p>
         </div>
       </footer>
     </main>

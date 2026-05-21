@@ -44,16 +44,16 @@ export default function AboutSection() {
       <div className="relative z-10 flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
         <FadeIn delay={0} y={40}>
           <h2 className="hero-heading text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight">
-            About me
+            Về mình
           </h2>
         </FadeIn>
 
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
           <AnimatedText 
-            text="I am a third-year student majoring in Development Economics, specializing in Economic Data Analysis and Policy at the University of Economics and Business - VNU. With a strong logical mindset and expertise in AI development, I bridge the gap between financial theory and professional corporate environments. Let's build something incredible together!"
-            className="max-w-[600px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]"
+            text="Chào bạn! Mình là sinh viên năm 3 chuyên ngành Kinh tế phát triển tại ĐH Kinh tế - ĐHQGHN (UEB). Với niềm đam mê mãnh liệt dành cho công nghệ, mình đã tự học và phát triển các hệ thống AI Chatbot, ứng dụng Web hiện đại để giải quyết các bài toán thực tế. Mình tin rằng sự kết hợp giữa tư duy logic của một nhà kinh tế và sức mạnh của AI sẽ tạo ra những giá trị đột phá. Hãy cùng nhau xây dựng những điều tuyệt vời nhé!"
+            className="max-w-[650px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]"
           />
-          <ContactButton />
+          <ContactButton label="Bắt đầu ngay" />
         </div>
       </div>
     </section>

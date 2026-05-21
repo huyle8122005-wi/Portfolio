@@ -7,7 +7,7 @@ import { LiveProjectButton } from '../Reusable/Buttons';
 const PROJECTS = [
   {
     num: "01",
-    category: "AI & Finance",
+    category: "AI & Tài chính",
     name: "SHB AI Assistant",
     link: "https://shbbot.pages.dev/",
     images: {
@@ -18,23 +18,23 @@ const PROJECTS = [
   },
   {
     num: "02",
-    category: "Web & Education",
+    category: "Web & Giáo dục",
     name: "Làm Giàu Kiểu HCM",
     link: "https://lamgiaukieuhcm.pages.dev/",
     images: {
-      col1_1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
-      col1_2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
+      col1_1: "/119322_chu_tich_ho_chi_minh_doc_tuyen_ngon_doc_lap_anh_t_l_05340013.jpg",
+      col1_2: "/bac-ho-voi-tuyen-ngon.webp",
       col2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85"
     }
   },
   {
     num: "03",
-    category: "Business",
-    name: "WIstore Platform",
+    category: "Kinh doanh",
+    name: "Nền tảng WIstore",
     images: {
-      col1_1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85",
+      col1_1: "/Store.JPG",
       col1_2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85",
-      col2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85"
+      col2: "/Store.JPG"
     }
   }
 ];
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
     >
       <div className="container mx-auto px-5 sm:px-8 md:px-10">
         <h2 className="hero-heading mb-20 text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight">
-          Project
+          Dự án
         </h2>
 
         <div className="flex flex-col gap-20">
