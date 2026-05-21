@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:cloudflare": "opennextjs-cloudflare",
-    "deploy": "npm run build:cloudflare && wrangler deploy"
+    "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -20,7 +19,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.19.11",
+    "@cloudflare/workers-types": "^4.20260521.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
