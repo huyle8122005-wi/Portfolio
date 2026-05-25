@@ -34,3 +34,24 @@ export const LiveProjectButton = ({
     {label}
   </button>
 );
+
+export const DownloadButton = ({ 
+  className = "", 
+  label = "Tải CV",
+  href 
+}: { 
+  className?: string; 
+  label?: string;
+  href: string;
+}) => (
+  <a 
+    href={href}
+    download
+    className={`group relative flex items-center gap-3 rounded-full border-2 border-[#D7E2EA]/30 px-8 py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#D7E2EA] transition-all hover:bg-[#D7E2EA] hover:text-black active:scale-95 ${className}`}
+  >
+    <span>{label}</span>
+    <svg className="h-4 w-4 transition-transform group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg>
+  </a>
+);

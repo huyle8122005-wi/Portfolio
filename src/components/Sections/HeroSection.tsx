@@ -2,7 +2,7 @@
 
 import FadeIn from '../Reusable/FadeIn';
 import Magnet from '../Reusable/Magnet';
-import { ContactButton } from '../Reusable/Buttons';
+import { ContactButton, DownloadButton } from '../Reusable/Buttons';
 import ThreeDCard from '../Reusable/ThreeDCard';
 
 export default function HeroSection() {
@@ -36,15 +36,20 @@ export default function HeroSection() {
             Xin chào! Mình là Huy. Cảm ơn bạn rất nhiều vì đã ghé thăm portfolio của mình! Hy vọng bạn sẽ tìm thấy những giải pháp đột phá và thú vị tại đây.
           </p>
         </FadeIn>
-        <FadeIn delay={0.5} y={20}>
-          <ContactButton 
-            label="Liên hệ ngay" 
-            onClick={() => {
-              const element = document.getElementById('contact');
-              element?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
-        </FadeIn>
+        <div className="flex flex-col items-end gap-4">
+          <FadeIn delay={0.5} y={20}>
+            <div className="flex flex-wrap justify-end gap-3">
+              <DownloadButton href="/Le_Kim_Huy_CV.pdf" />
+              <ContactButton 
+                label="Liên hệ ngay" 
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              />
+            </div>
+          </FadeIn>
+        </div>
       </div>
 
       {/* Hero Portrait */}

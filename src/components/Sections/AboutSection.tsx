@@ -2,7 +2,7 @@
 
 import FadeIn from '../Reusable/FadeIn';
 import AnimatedText from '../Reusable/AnimatedText';
-import { ContactButton } from '../Reusable/Buttons';
+import { ContactButton, DownloadButton } from '../Reusable/Buttons';
 
 export default function AboutSection() {
   return (
@@ -53,13 +53,16 @@ export default function AboutSection() {
             text="Chào bạn! Mình là sinh viên năm 3 chuyên ngành Kinh tế phát triển tại ĐH Kinh tế - ĐHQGHN (UEB). Với niềm đam mê mãnh liệt dành cho công nghệ, mình đã tự học và phát triển các hệ thống AI Chatbot, ứng dụng Web hiện đại để giải quyết các bài toán thực tế. Mình tin rằng sự kết hợp giữa tư duy logic của một nhà kinh tế và sức mạnh của AI sẽ tạo ra những giá trị đột phá. Hãy cùng nhau xây dựng những điều tuyệt vời nhé!"
             className="max-w-[650px] text-center text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]"
           />
-          <ContactButton 
-            label="Bắt đầu ngay" 
-            onClick={() => {
-              const element = document.getElementById('projects');
-              element?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <ContactButton 
+              label="Bắt đầu ngay" 
+              onClick={() => {
+                const element = document.getElementById('projects');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
+            <DownloadButton href="/Le_Kim_Huy_CV.pdf" />
+          </div>
         </div>
       </div>
     </section>
