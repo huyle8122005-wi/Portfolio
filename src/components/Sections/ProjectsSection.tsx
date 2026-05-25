@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { LiveProjectButton } from '../Reusable/Buttons';
 
 const PROJECTS = [
@@ -211,14 +212,18 @@ function ProjectCard({ index, num, category, name, images, range, targetScale, l
 function ProjectModal({ project, onClose }: { project: any; onClose: () => void }) {
   const [activeTab, setActiveTab] = useState<'overview' | 'features' | 'gallery' | 'tech'>('overview');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   // Prevent background scroll when modal is open
   useEffect(() => {
+    setMounted(true);
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, []);
+
+  if (!mounted) return null;
 
   const tabs = [
     { id: 'overview', label: 'Tổng quan', icon: 'ℹ️' },
@@ -227,8 +232,8 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
     { id: 'tech', label: 'Kỹ thuật', icon: '🛠️' },
   ];
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 md:p-10">
+  const modalContent = (
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-6 md:p-10">
       {/* Dark blur backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -433,4 +438,6 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
       </motion.div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
