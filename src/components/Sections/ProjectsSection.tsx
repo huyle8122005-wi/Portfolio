@@ -75,11 +75,13 @@ const PROJECTS = [
       col2: "/wi_store_fashion.png"
     },
     description: "Hệ sinh thái e-commerce thời trang và đồ dùng Mẹ & Bé chuyên nghiệp, tích hợp bán hàng đa kênh tự động và tối ưu hóa chuyển đổi trải nghiệm khách hàng.",
-    longDescription: "WIstore là giải pháp thương mại điện tử toàn diện tập trung vào hai thị trường tiềm năng lớn: Thời trang cao cấp và đồ dùng Mẹ & Bé chất lượng cao. Nền tảng giải quyết bài toán vận hành bán hàng đa kênh (Omnichannel Commerce) bằng cách đồng bộ hóa tự động danh mục sản phẩm, đơn hàng và kho bãi từ website trực tiếp đến các trang mạng xã hội lớn, đặc biệt là tích hợp sâu với Facebook Social Commerce để tối ưu doanh số bán lẻ.",
+    longDescription: "WIstore - Wibaby hướng tới việc cung cấp giải pháp toàn diện cho mẹ và bé từ giai đoạn thai kỳ cho đến khi bé lớn. Thương hiệu phát triển mạnh mẽ trên cả hai mặt trận offline và online. Các cửa hàng vật lý được thiết kế với không gian sáng, rộng rãi, bày trí khoa học theo từng khu vực để tối ưu hóa trải nghiệm. Kênh Online phát triển mạnh qua Shopee Mall, Tik Tok Shop và Fanpage với các buổi livestream tư vấn kỹ lưỡng, giúp mẹ bầu/mẹ bỉm dễ dàng tiếp cận sản phẩm chất lượng mọi lúc mọi nơi.",
     details: [
-      "Hệ thống danh mục sản phẩm thời trang và Mẹ & Bé thiết kế trực quan, tốc độ tải trang cực nhanh dưới 1.5s.",
-      "Tích hợp bán hàng và tương tác đa kênh Social Commerce trực tiếp qua Facebook.",
-      "Hơn 1.2K người theo dõi hoạt động thường xuyên trên kênh truyền thông bán hàng chính thức."
+      "Thời trang cho bé: Phong cách Hàn Quốc, tối giản hiện đại với chất liệu sợi tre, organic cotton an toàn tuyệt đối cho da nhạy cảm.",
+      "Thời trang cho mẹ: Đầm bầu, đồ bộ mặc nhà sau sinh thiết kế tinh tế, đảm bảo tính thẩm mỹ và tiện lợi tối đa khi chăm sóc bé.",
+      "Hệ sinh thái Newborn: Bodysuit sợi tre, khăn quấn swaddle, và đầy đủ phụ kiện sơ sinh cao cấp.",
+      "Tiện ích Mẹ & Bé: Máy hút sữa, máy tiệt trùng từ các thương hiệu lớn như Fatzbaby, Moyuum, Philips Avent.",
+      "Dinh dưỡng & Vệ sinh: Thực phẩm bổ sung, vitamin và các loại tã/bỉm nội địa/nhập khẩu chính hãng."
     ],
     tech: ["Next.js", "TailwindCSS", "Node.js", "MongoDB", "Facebook Integration", "Cloudinary"],
     gallery: [
@@ -88,9 +90,9 @@ const PROJECTS = [
       { src: "/wi_store_fb.png", caption: "Kênh cộng đồng Social Commerce chính thức trên Facebook với hơn 1.2K người theo dõi tích cực" }
     ],
     impact: [
-      "Xây dựng và phát triển cộng đồng khách hàng trung thành với hơn 1.2K người theo dõi.",
-      "Tối ưu quy trình chốt đơn hàng đa kênh tự động, giảm tải 50% thời gian xử lý thủ công.",
-      "Tốc độ tải trang đạt chuẩn Core Web Vitals của Google (LCP dưới 1.5 giây), tăng tỉ lệ chuyển đổi mua sắm."
+      "Chất lượng sản phẩm đồng đều: Giữ form và độ mềm sau nhiều lần giặt, đường may kỹ lưỡng không chỉ thừa.",
+      "Giá cả hợp lý: Phân khúc tầm trung phù hợp với đại đa số gia đình trẻ Việt Nam nhưng chất lượng nhận lại tương xứng.",
+      "Dịch vụ tận tâm: Chính sách đổi trả linh hoạt và đội ngũ tư vấn viên có kiến thức chuyên sâu về chăm sóc mẹ và bé."
     ],
     architecture: "Hệ thống thương mại điện tử Next.js được kết nối tối ưu với RESTful API Node.js/Express và cơ sở dữ liệu MongoDB. Toàn bộ hình ảnh sản phẩm chất lượng cao được lưu trữ và tối ưu hóa thông qua Cloudinary CDN để đảm bảo tải trang siêu tốc. Hệ thống cũng kết nối trực tiếp với API Facebook Graph để tự động hóa hoạt động đồng bộ sản phẩm."
   }
@@ -226,14 +228,14 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
   ];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 md:p-10">
       {/* Dark blur backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/85 backdrop-blur-2xl"
+        className="absolute inset-0 bg-black/90 backdrop-blur-2xl"
       />
 
       {/* Modal Card */}
@@ -242,12 +244,12 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 10 }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="relative z-10 w-full max-w-4xl mx-auto rounded-[30px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/95 p-6 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)] text-[#D7E2EA] overflow-hidden flex flex-col max-h-[90vh]"
+        className="relative z-10 w-full max-w-4xl mx-auto rounded-[25px] sm:rounded-[30px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/98 p-5 sm:p-8 md:p-10 shadow-[0_0_60px_rgba(0,0,0,0.8)] text-[#D7E2EA] overflow-hidden flex flex-col max-h-[92vh] sm:max-h-[90vh]"
       >
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full border border-[#D7E2EA]/10 bg-white/[0.02] hover:bg-white/[0.08] transition-all text-[#D7E2EA]/60 hover:text-[#D7E2EA] active:scale-90 z-20"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full border border-[#D7E2EA]/10 bg-white/[0.02] hover:bg-white/[0.08] transition-all text-[#D7E2EA]/60 hover:text-[#D7E2EA] active:scale-90 z-20"
         >
           <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
@@ -255,24 +257,24 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
         </button>
 
         {/* Modal Header */}
-        <div className="mb-6 flex flex-col gap-2 flex-shrink-0 pr-8">
-          <span className="text-xs uppercase tracking-widest text-[#D7E2EA]/50 font-semibold">{project.category}</span>
-          <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#D7E2EA] pr-8 leading-none">
+        <div className="mb-4 sm:mb-6 flex flex-col gap-1.5 flex-shrink-0 pr-10">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#A5BFCF]/60 font-semibold">{project.category}</span>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-[#D7E2EA] leading-tight">
             {project.name}
           </h3>
           <div className="w-12 h-1 bg-gradient-to-r from-[#688E9E] to-[#BBCCD7] rounded-full mt-1" />
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex border-b border-white/10 gap-1 overflow-x-auto pb-px flex-shrink-0 scrollbar-none mb-6">
+        <div className="flex border-b border-white/10 gap-1 overflow-x-auto pb-px flex-shrink-0 scrollbar-none mb-5 sm:mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all border-b-2 shrink-0 ${
+              className={`relative flex items-center gap-1.5 px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-all border-b-2 shrink-0 ${
                 activeTab === tab.id
                   ? 'border-[#688E9E] text-[#D7E2EA]'
-                  : 'border-transparent text-[#D7E2EA]/50 hover:text-[#D7E2EA]/85'
+                  : 'border-transparent text-[#D7E2EA]/40 hover:text-[#D7E2EA]/80'
               }`}
             >
               <span>{tab.icon}</span>
@@ -282,15 +284,15 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
         </div>
 
         {/* Tab Content Area (Scrollable) */}
-        <div className="flex-1 overflow-y-auto pr-1 custom-scrollbar text-sm sm:text-base leading-relaxed text-[#D7E2EA]/85">
+        <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar text-sm sm:text-base leading-relaxed text-[#D7E2EA]/90 font-light">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
-              transition={{ duration: 0.15 }}
-              className="flex flex-col gap-6"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col gap-6 sm:gap-8 pb-4"
             >
               {/* TAB 1: OVERVIEW */}
               {activeTab === 'overview' && (
