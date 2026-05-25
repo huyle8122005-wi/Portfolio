@@ -4,19 +4,19 @@ import { useEffect, useState, useRef } from 'react';
 
 const row1 = [
   "/shb_welcome.png",
-  "/wi_store_fashion.png",
+  "/wi_store_mom_baby.png",
   "/wi_store_fb.png",
   "/shb_chatbot_dark.png",
-  "/wi_store_mom_baby.png",
+  "/Store.JPG",
   "/hcm_landing.png"
 ];
 
 const row2 = [
   "/hcm_lessons.png",
   "/bac-ho-voi-tuyen-ngon.webp",
-  "/shb_welcome.png",
+  "/shb_ai_mockup.png",
   "/shb_logo.png",
-  "/wi_store_fashion.png",
+  "/wi_store_mom_baby.png",
   "/hcm_landing.png"
 ];
 

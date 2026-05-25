@@ -71,9 +71,9 @@ const PROJECTS = [
     category: "Kinh doanh",
     name: "Nền tảng WIstore",
     images: {
-      col1_1: "/wi_store_mom_baby.png",
-      col1_2: "/wi_store_fb.png",
-      col2: "/wi_store_fashion.png"
+      col1_1: "/wi_store_fb.png",
+      col1_2: "/Store.JPG",
+      col2: "/wi_store_mom_baby.png"
     },
     description: "Hệ sinh thái e-commerce thời trang và đồ dùng Mẹ & Bé chuyên nghiệp, tích hợp bán hàng đa kênh tự động và tối ưu hóa chuyển đổi trải nghiệm khách hàng.",
     longDescription: "WIstore - Wibaby hướng tới việc cung cấp giải pháp toàn diện cho mẹ và bé từ giai đoạn thai kỳ cho đến khi bé lớn. Thương hiệu phát triển mạnh mẽ trên cả hai mặt trận offline và online. Các cửa hàng vật lý được thiết kế với không gian sáng, rộng rãi, bày trí khoa học theo từng khu vực để tối ưu hóa trải nghiệm. Kênh Online phát triển mạnh qua Shopee Mall, Tik Tok Shop và Fanpage với các buổi livestream tư vấn kỹ lưỡng, giúp mẹ bầu/mẹ bỉm dễ dàng tiếp cận sản phẩm chất lượng mọi lúc mọi nơi.",
@@ -86,8 +86,8 @@ const PROJECTS = [
     ],
     tech: ["Next.js", "TailwindCSS", "Node.js", "MongoDB", "Facebook Integration", "Cloudinary"],
     gallery: [
-      { src: "/wi_store_fashion.png", caption: "Bộ sưu tập Thời trang Thu/Đông 2024 cao cấp với giao diện trình bày cực kỳ sang trọng và thanh lịch" },
       { src: "/wi_store_mom_baby.png", caption: "Giao diện danh mục sản phẩm đồ dùng Mẹ & Bé trực quan, ấm áp và thân thiện với người dùng" },
+      { src: "/Store.JPG", caption: "Không gian cửa hàng vật lý WIstore được thiết kế hiện đại, khoa học và sang trọng" },
       { src: "/wi_store_fb.png", caption: "Kênh cộng đồng Social Commerce chính thức trên Facebook với hơn 1.2K người theo dõi tích cực" }
     ],
     impact: [
