@@ -226,23 +226,23 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10">
       {/* Dark blur backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+        className="absolute inset-0 bg-black/85 backdrop-blur-2xl"
       />
 
       {/* Modal Card */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        initial={{ opacity: 0, scale: 0.95, y: 10 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-        className="relative z-10 w-full max-w-3xl rounded-[30px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/95 p-6 sm:p-8 md:p-10 shadow-2xl text-[#D7E2EA] overflow-hidden flex flex-col max-h-[85vh]"
+        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className="relative z-10 w-full max-w-4xl mx-auto rounded-[30px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/95 p-6 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)] text-[#D7E2EA] overflow-hidden flex flex-col max-h-[90vh]"
       >
         {/* Close Button */}
         <button 

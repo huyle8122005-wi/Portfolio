@@ -37,7 +37,13 @@ export default function HeroSection() {
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
-          <ContactButton label="Liên hệ ngay" />
+          <ContactButton 
+            label="Liên hệ ngay" 
+            onClick={() => {
+              const element = document.getElementById('contact');
+              element?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
         </FadeIn>
       </div>
 
