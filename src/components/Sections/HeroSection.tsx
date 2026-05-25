@@ -36,20 +36,15 @@ export default function HeroSection() {
             Xin chào! Mình là Huy. Cảm ơn bạn rất nhiều vì đã ghé thăm portfolio của mình! Hy vọng bạn sẽ tìm thấy những giải pháp đột phá và thú vị tại đây.
           </p>
         </FadeIn>
-        <div className="flex flex-col items-end gap-4">
-          <FadeIn delay={0.5} y={20}>
-            <div className="flex flex-wrap justify-end gap-3">
-              <DownloadButton href="/Le_Kim_Huy_CV.pdf" />
-              <ContactButton 
-                label="Liên hệ ngay" 
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              />
-            </div>
-          </FadeIn>
-        </div>
+        <FadeIn delay={0.5} y={20}>
+          <ContactButton 
+            label="Liên hệ ngay" 
+            onClick={() => {
+              const element = document.getElementById('contact');
+              element?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
+        </FadeIn>
       </div>
 
       {/* Hero Portrait */}
