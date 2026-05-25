@@ -174,11 +174,11 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-4 mt-2">
+                  <div className="flex flex-col gap-4 mt-4">
                     <button 
                       disabled={formState === 'submitting' || formState === 'success'}
                       type="submit"
-                      className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#D7E2EA] py-4.5 text-xs font-black uppercase tracking-[0.3em] text-black transition-all hover:bg-white active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 shadow-lg shadow-white/5"
+                      className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#D7E2EA] py-5 text-sm font-bold uppercase tracking-[0.25em] text-black transition-all hover:bg-white hover:shadow-[0_0_30px_rgba(215,226,234,0.3)] active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 shadow-xl"
                     >
                       <AnimatePresence mode="wait">
                         {formState === 'idle' && (
@@ -189,8 +189,8 @@ export default function ContactSection() {
                             exit={{ opacity: 0, y: -10 }}
                             className="flex items-center gap-3"
                           >
-                            <span>Gửi ngay</span>
-                            <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                            <span className="font-black">Gửi tin nhắn ngay</span>
+                            <svg className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                               <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                           </motion.div>
@@ -200,13 +200,13 @@ export default function ContactSection() {
                             key="submitting"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-3"
                           >
-                            <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24">
+                            <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24">
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                             </svg>
-                            <span>Đang xử lý</span>
+                            <span className="font-bold">Đang xử lý...</span>
                           </motion.div>
                         )}
                         {formState === 'success' && (
@@ -216,10 +216,10 @@ export default function ContactSection() {
                             animate={{ opacity: 1, scale: 1 }}
                             className="flex items-center gap-2 text-green-600"
                           >
-                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
+                            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
                               <path d="M20 6L9 17l-5-5"/>
                             </svg>
-                            <span>Đã gửi thành công</span>
+                            <span className="font-bold">Đã gửi thành công</span>
                           </motion.div>
                         )}
                       </AnimatePresence>
