@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import FadeIn from '../Reusable/FadeIn';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CONTACTS = [
   {
@@ -60,65 +62,183 @@ const CONTACTS = [
 ];
 
 export default function ContactSection() {
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormState('submitting');
+    
+    // Simulate API call
+    setTimeout(() => {
+      setFormState('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setFormState('idle'), 5000);
+    }, 1500);
+  };
+
   return (
     <section id="contact" className="relative bg-transparent px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32 overflow-hidden">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-6xl">
         <FadeIn>
           <h2 className="hero-heading mb-16 text-center text-[clamp(3rem,10vw,120px)] font-black uppercase tracking-tight sm:mb-20 md:mb-28">
             Liên hệ
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {CONTACTS.map((contact, i) => {
-            const Icon = contact.icon;
-            return (
-              <FadeIn key={i} delay={i * 0.1} className="h-full">
-                <a
-                  href={contact.href}
-                  target={contact.isExternal ? "_blank" : undefined}
-                  rel={contact.isExternal ? "noopener noreferrer" : undefined}
-                  className={`group relative flex flex-col justify-between h-full rounded-[2rem] border border-[#D7E2EA]/10 bg-[#0C0C0C]/40 p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-[#D7E2EA]/30 ${contact.glow} hover:shadow-[0_0_40px_rgba(215,226,234,0.08)] overflow-hidden`}
-                >
-                  {/* Space theme color wash */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none`} />
-                  
-                  {/* Subtle Tech Cyber Grid pattern overlay */}
-                  <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[linear-gradient(rgba(215,226,234,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(215,226,234,0.1)_1px,transparent_1px)] bg-[size:16px_16px]" />
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          {/* Left: Contact Info Cards */}
+          <div className="flex flex-col gap-6 lg:col-span-5">
+            <FadeIn delay={0.1}>
+              <div className="mb-6 flex flex-col gap-3">
+                <h3 className="text-2xl font-bold text-[#D7E2EA] sm:text-3xl">Kết nối với mình</h3>
+                <p className="max-w-md text-sm leading-relaxed text-[#A5BFCF] sm:text-base">
+                  Bạn có ý tưởng dự án hoặc muốn hợp tác? Đừng ngần ngại liên hệ qua các kênh mạng xã hội hoặc gửi tin nhắn trực tiếp cho mình nhé!
+                </p>
+              </div>
+            </FadeIn>
 
-                  <div className="relative z-10 flex flex-col gap-6 w-full">
-                    {/* Top Row */}
-                    <div className="flex items-center justify-between w-full">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D7E2EA]/5 text-[#D7E2EA] transition-all duration-500 group-hover:bg-[#D7E2EA]/15 group-hover:scale-110">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {CONTACTS.map((contact, i) => {
+                const Icon = contact.icon;
+                return (
+                  <FadeIn key={i} delay={i * 0.1} className="h-full">
+                    <a
+                      href={contact.href}
+                      target={contact.isExternal ? "_blank" : undefined}
+                      rel={contact.isExternal ? "noopener noreferrer" : undefined}
+                      className={`group relative flex items-center gap-5 rounded-[1.5rem] border border-[#D7E2EA]/10 bg-[#0C0C0C]/40 p-5 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#D7E2EA]/30 ${contact.glow} overflow-hidden`}
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-br ${contact.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none`} />
+                      
+                      <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#D7E2EA]/5 text-[#D7E2EA] transition-all duration-500 group-hover:bg-[#D7E2EA]/15 group-hover:scale-110">
                         <Icon />
                       </div>
-                      
-                      {contact.isExternal && (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-[#D7E2EA]/30 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#D7E2EA]/70">
-                          <path d="M15 3h6v6"/>
-                          <path d="M10 14 21 3"/>
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        </svg>
-                      )}
-                    </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col gap-1.5 mt-2">
-                      <span className="text-xs uppercase tracking-widest text-[#A5BFCF] opacity-50 font-medium">
-                        {contact.label}
-                      </span>
-                      <p className="text-[clamp(1.1rem,1.8vw,1.35rem)] font-semibold text-[#D7E2EA] transition-colors duration-300 group-hover:text-white break-all font-mono">
-                        {contact.value}
-                      </p>
+                      <div className="relative z-10 flex flex-col gap-0.5">
+                        <span className="text-[10px] uppercase tracking-widest text-[#A5BFCF] opacity-50 font-medium">
+                          {contact.label}
+                        </span>
+                        <p className="text-sm font-semibold text-[#D7E2EA] transition-colors duration-300 group-hover:text-white break-all font-mono">
+                          {contact.value}
+                        </p>
+                      </div>
+                    </a>
+                  </FadeIn>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right: Contact Form Box */}
+          <div className="lg:col-span-7">
+            <FadeIn delay={0.3}>
+              <div className="relative rounded-[2.5rem] border border-[#D7E2EA]/15 bg-[#0C0C0C]/60 p-8 sm:p-10 md:p-12 backdrop-blur-2xl shadow-2xl overflow-hidden">
+                {/* Background Decor */}
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-600/10 blur-[80px]" />
+                <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-blue-600/10 blur-[80px]" />
+                
+                <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-6">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <div className="flex flex-col gap-2">
+                      <label className="ml-1 text-xs font-semibold uppercase tracking-widest text-[#A5BFCF]/60">Họ và tên</label>
+                      <input 
+                        required
+                        type="text" 
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Nhập tên của bạn..."
+                        className="rounded-2xl border border-[#D7E2EA]/10 bg-white/[0.03] px-6 py-4 text-sm text-[#D7E2EA] outline-none transition-all placeholder:text-[#D7E2EA]/20 focus:border-[#D7E2EA]/30 focus:bg-white/[0.06]"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="ml-1 text-xs font-semibold uppercase tracking-widest text-[#A5BFCF]/60">Email</label>
+                      <input 
+                        required
+                        type="email" 
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="email@example.com"
+                        className="rounded-2xl border border-[#D7E2EA]/10 bg-white/[0.03] px-6 py-4 text-sm text-[#D7E2EA] outline-none transition-all placeholder:text-[#D7E2EA]/20 focus:border-[#D7E2EA]/30 focus:bg-white/[0.06]"
+                      />
                     </div>
                   </div>
 
-                  {/* Aesthetic bottom border glow strip */}
-                  <div className="absolute bottom-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-[#D7E2EA]/10 to-transparent transition-opacity duration-500 group-hover:via-[#D7E2EA]/30" />
-                </a>
-              </FadeIn>
-            );
-          })}
+                  <div className="flex flex-col gap-2">
+                    <label className="ml-1 text-xs font-semibold uppercase tracking-widest text-[#A5BFCF]/60">Lời nhắn</label>
+                    <textarea 
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Chào Huy, mình muốn thảo luận về..."
+                      className="resize-none rounded-3xl border border-[#D7E2EA]/10 bg-white/[0.03] px-6 py-4 text-sm text-[#D7E2EA] outline-none transition-all placeholder:text-[#D7E2EA]/20 focus:border-[#D7E2EA]/30 focus:bg-white/[0.06]"
+                    />
+                  </div>
+
+                  <button 
+                    disabled={formState === 'submitting' || formState === 'success'}
+                    type="submit"
+                    className="group relative mt-2 flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#D7E2EA] py-4 text-xs font-bold uppercase tracking-[0.2em] text-black transition-all hover:bg-white active:scale-95 disabled:opacity-70 disabled:active:scale-100"
+                  >
+                    <AnimatePresence mode="wait">
+                      {formState === 'idle' && (
+                        <motion.div 
+                          key="idle"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="flex items-center gap-3"
+                        >
+                          <span>Gửi tin nhắn ngay</span>
+                          <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                          </svg>
+                        </motion.div>
+                      )}
+                      {formState === 'submitting' && (
+                        <motion.div 
+                          key="submitting"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="flex items-center gap-2"
+                        >
+                          <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          <span>Đang gửi...</span>
+                        </motion.div>
+                      )}
+                      {formState === 'success' && (
+                        <motion.div 
+                          key="success"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          className="flex items-center gap-2 text-green-600"
+                        >
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                            <path d="M20 6L9 17l-5-5"/>
+                          </svg>
+                          <span>Gửi thành công!</span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                  
+                  {formState === 'success' && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center text-xs text-[#D7E2EA]/60"
+                    >
+                      Cảm ơn bạn! Mình sẽ phản hồi lại sớm nhất có thể.
+                    </motion.p>
+                  )}
+                </form>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
